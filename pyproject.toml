@@ -11,5 +11,9 @@ dependencies = [
     "boto3>=1.35.0",
 ]
 
+[project.scripts]
+bronze-ingestion = "jobs.bronze_ingestion:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["ingestion*", "jobs*"]

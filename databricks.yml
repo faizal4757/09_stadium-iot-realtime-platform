@@ -1,0 +1,30 @@
+
+bundle:
+  name: stadium_iot_realtime_platform
+
+include:
+  - resources/*.yml
+
+variables:
+  source_path:
+    default: s3://stadium-iot-realtime-faizal-dev/raw/stadium_iot/
+
+  checkpoint_path:
+    default: s3://stadium-iot-databricks-faizal-dev/managed/checkpoints/bronze/sensor_events/
+
+  schema_path:
+    default: s3://stadium-iot-databricks-faizal-dev/managed/schemas/bronze/sensor_events/
+
+  target_table:
+    default: stadium_iot_dev.bronze.sensor_events
+
+targets:
+  dev:
+    mode: development
+    default: true
+
+artifacts:
+  default:
+    type: whl
+    build: python -m build
+    path: .

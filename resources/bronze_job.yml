@@ -1,0 +1,29 @@
+resources:
+  jobs:
+    bronze_ingestion:
+      name: stadium-bronze-ingestion
+
+      tasks:
+        - task_key: bronze_sensor_events
+
+          python_wheel_task:
+            package_name: stadium-iot-realtime-platform
+            entry_point: bronze-ingestion
+            parameters:
+              - --source-path
+              - ${var.source_path}
+              - --checkpoint-path
+              - ${var.checkpoint_path}
+              - --schema-path
+              - ${var.schema_path}
+              - --target-table
+              - ${var.target_table}
+
+          environment_key: default
+
+      environments:
+        - environment_key: default
+          spec:
+            environment_version: "5"
+            dependencies:
+              - ../dist/*.whl
