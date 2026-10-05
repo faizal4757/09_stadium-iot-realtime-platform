@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SensorEvent",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "stadium_id": {
+      "type": "string"
+    },
+    "stadium_name": {
+      "type": "string"
+    },
+    "sensor_id": {
+      "type": "string"
+    },
+    "sensor_type": {
+      "type": "string"
+    },
+    "zone": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "value": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "is_anomaly": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "event_id",
+    "stadium_id",
+    "stadium_name",
+    "sensor_id",
+    "sensor_type",
+    "zone",
+    "timestamp",
+    "value",
+    "unit",
+    "is_anomaly"
+  ]
+}

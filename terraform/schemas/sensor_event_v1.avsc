@@ -1,0 +1,51 @@
+{
+  "type": "record",
+  "name": "SensorEvent",
+  "namespace": "com.stadium.iot",
+  "doc": "Schema for stadium IoT sensor events",
+  "fields": [
+    {
+      "name": "event_id",
+      "type": "string"
+    },
+    {
+      "name": "stadium_id",
+      "type": "string"
+    },
+    {
+      "name": "stadium_name",
+      "type": "string"
+    },
+    {
+      "name": "sensor_id",
+      "type": "string"
+    },
+    {
+      "name": "sensor_type",
+      "type": "string"
+    },
+    {
+      "name": "zone",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "value",
+      "type": "double"
+    },
+    {
+      "name": "unit",
+      "type": "string"
+    },
+    {
+      "name": "is_anomaly",
+      "type": "boolean"
+    }
+  ]
+}
