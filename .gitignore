@@ -38,3 +38,8 @@ crash.*.log
 # Operating-system files.
 .DS_Store
 Thumbs.db
+
+
+# AWS Lambda build artifacts
+terraform/lambda/package/
+terraform/lambda/*.zip
